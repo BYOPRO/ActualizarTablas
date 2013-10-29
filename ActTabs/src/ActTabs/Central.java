@@ -9,14 +9,14 @@ import javax.swing.JOptionPane;
 
 /*@author BYO*/
 public class Central extends javax.swing.JFrame {
-     
-     DriverBD CONX1 = new DriverBD();
-     
-     public Central() {
-          initComponents();
-     }
-     
-     @SuppressWarnings("unchecked")
+
+    DriverBD CONX1 = new DriverBD();
+
+    public Central() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
      // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
      private void initComponents() {
 
@@ -247,88 +247,97 @@ public class Central extends javax.swing.JFrame {
      }// </editor-fold>//GEN-END:initComponents
 
     private void BotonConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConectarActionPerformed
-         String CONEXIONSTATE = LabelEstadoConx.getText();
-         switch (CONEXIONSTATE) {
-              case "Desconectado.":
-                   String IP = TextoHost.getText();
-                   String BD = TextoBD.getText();
-                   String USER = TextoUser.getText();
-                   String PASS = String.valueOf(TextoPass.getPassword());
-                   this.CONX1.DriverBDVarSet(IP, BD, USER, PASS);
-                   try {
-                        this.CONX1.Conectar();
-                        LabelEstadoConx.setText("Conectado.");
-                        LabelEstadoConx.setForeground(Color.BLUE);
-                        BotonConectar.setText("Desconectar");
-                   } catch (ClassNotFoundException | SQLException ex) {
-                        JOptionPane.showMessageDialog(null,
-                                "No se pudo establecer una conexión.\n\n"
-                                + "Verifique: \n"
-                                + "Los datos de conexión.\n"
-                                + "Que la base de datos esté en funcionamiento.",
-                                "Error en conexión.", JOptionPane.ERROR_MESSAGE);
-                   }
-                   break;
-              case "Conectado.":
-                   try {
-                        this.CONX1.Desconectar();
-                        LabelEstadoConx.setText("Desconectado.");
-                        LabelEstadoConx.setForeground(Color.RED);
-                        BotonConectar.setText("Conectar");
-                   } catch (SQLException ex) {
-                        JOptionPane.showMessageDialog(null, "No se pudo desconectar.", "Error desconectando.", JOptionPane.ERROR_MESSAGE);
-                   }
-                   break;
-              default:
-                   break;
-         }
-    }//GEN-LAST:event_BotonConectarActionPerformed
-     
-     private void TextoPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoPassActionPerformed
-          // TODO add your handling code here:
-     }//GEN-LAST:event_TextoPassActionPerformed
-     
-     private void BotonRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegActionPerformed
-          if ("SI".equals(this.CONX1.getStat())) {
-               Reg REG1 = new Reg();
-               REG1.BorrarRegistros(CONX1);
-               REG1.RegistrarDeptos(CONX1);
-          } else {
-               JOptionPane.showMessageDialog(null, "Conecte el programa con la base de datos.", "No conectado.", JOptionPane.ERROR_MESSAGE);
-          }
-     }//GEN-LAST:event_BotonRegActionPerformed
-    
-     public static void main(String args[]) {
-          /* Set the Nimbus look and feel */
-          //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-           * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-           */
-          try {
-               for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                    if ("Nimbus".equals(info.getName())) {
-                         javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                         break;
-                    }
-               }
-          } catch (ClassNotFoundException ex) {
-               java.util.logging.Logger.getLogger(Central.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (InstantiationException ex) {
-               java.util.logging.Logger.getLogger(Central.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (IllegalAccessException ex) {
-               java.util.logging.Logger.getLogger(Central.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-               java.util.logging.Logger.getLogger(Central.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          }
-          //</editor-fold>
+        String CONEXIONSTATE = LabelEstadoConx.getText();
+        datos dato = new datos();
+        switch (CONEXIONSTATE) {
+            case "Desconectado.":
+                String IP = TextoHost.getText();
+                String BD = TextoBD.getText();
+                String USER = TextoUser.getText();
+                String PASS = String.valueOf(TextoPass.getPassword());
+                
+                dato.setHost(IP);
+                dato.setBD(BD);
+                dato.setUser(USER);
+                dato.setPass(PASS);
+                
+                this.CONX1.DriverBDVarSet(dato);
+                try {
+                    this.CONX1.Conectar();
+                    LabelEstadoConx.setText("Conectado.");
+                    LabelEstadoConx.setForeground(Color.BLUE);
+                    BotonConectar.setText("Desconectar");
+                } catch (ClassNotFoundException | SQLException ex) {
+                    JOptionPane.showMessageDialog(null,
+                            "No se pudo establecer una conexión.\n\n"
+                            + "Verifique: \n"
+                            + "Los datos de conexión.\n"
+                            + "Que la base de datos esté en funcionamiento.",
+                            "Error en conexión.", JOptionPane.ERROR_MESSAGE);
+                }
+                break;
+            case "Conectado.":
+                try {
+                    this.CONX1.Desconectar();
+                    LabelEstadoConx.setText("Desconectado.");
+                    LabelEstadoConx.setForeground(Color.RED);
+                    BotonConectar.setText("Conectar");
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "No se pudo desconectar.", "Error desconectando.", JOptionPane.ERROR_MESSAGE);
+                }
+                break;
+            default:
+                break;
+        }
 
-          /* Create and display the form */
-          java.awt.EventQueue.invokeLater(new Runnable() {
-               public void run() {
-                    new Central().setVisible(true);
-               }
-          });
-     }
+
+    }//GEN-LAST:event_BotonConectarActionPerformed
+
+     private void TextoPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoPassActionPerformed
+         // TODO add your handling code here:
+     }//GEN-LAST:event_TextoPassActionPerformed
+
+     private void BotonRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegActionPerformed
+         if ("SI".equals(this.CONX1.getStat())) {
+             Reg REG1 = new Reg();
+             REG1.BorrarRegistros(CONX1);
+             REG1.RegistrarDeptos(CONX1);
+         } else {
+             JOptionPane.showMessageDialog(null, "Conecte el programa con la base de datos.", "No conectado.", JOptionPane.ERROR_MESSAGE);
+         }
+     }//GEN-LAST:event_BotonRegActionPerformed
+
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Central.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Central.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Central.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Central.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Central().setVisible(true);
+            }
+        });
+    }
      // Variables declaration - do not modify//GEN-BEGIN:variables
      private javax.swing.JButton BotonConectar;
      private javax.swing.JButton BotonReg;

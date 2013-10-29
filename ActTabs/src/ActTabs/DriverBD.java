@@ -16,12 +16,12 @@ public class DriverBD {
           STAT = "NO";
      }
 
-     public void DriverBDVarSet(String IP, String BD, String USER, String PASS) {
-          this.IP = IP;
-          this.BD = BD;
+     public void DriverBDVarSet(datos dato) {
+          this.IP = dato.getHost();
+          this.BD = dato.getBD();
           this.URL = "jdbc:mysql://" + IP + "/" + BD;
-          this.USER = USER;
-          this.PASS = PASS;
+          this.USER = dato.getUser();
+          this.PASS = dato.getPass();
      }
 
      public Connection Conectar() throws ClassNotFoundException, SQLException {

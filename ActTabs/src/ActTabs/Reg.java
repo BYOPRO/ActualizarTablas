@@ -33,8 +33,8 @@ public class Reg {
 
      public void BorrarRegistros(DriverBD DRIVER1) {
           try {
-               DRIVER1.EjecutarQuery("DELETE FROM `renap`.`municipio`");
-               DRIVER1.EjecutarQuery("DELETE FROM `renap`.`departamento`");
+               DRIVER1.EjecutarQuery("DELETE FROM municipio");
+               DRIVER1.EjecutarQuery("DELETE FROM departamento");
           } catch (SQLException ex) {
                Logger.getLogger(Reg.class.getName()).log(Level.SEVERE, null, ex);
           }
@@ -44,158 +44,158 @@ public class Reg {
           try {
                int NUMDEPTO = 1;
                int NUMMUNI = 1;
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D1[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D1[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D1.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D1[0] + "', '" + D1[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D1[0] + "', '" + D1[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D2[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D2[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D2.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D2[0] + "', '" + D2[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D2[0] + "', '" + D2[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D3[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D3[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D3.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D3[0] + "', '" + D3[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D3[0] + "', '" + D3[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D4[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D4[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D4.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D4[0] + "', '" + D4[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D4[0] + "', '" + D4[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D5[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D5[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D5.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D5[0] + "', '" + D5[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D5[0] + "', '" + D5[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D6[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D6[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D6.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D6[0] + "', '" + D6[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D6[0] + "', '" + D6[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D7[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D7[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D7.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D7[0] + "', '" + D7[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D7[0] + "', '" + D7[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D8[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D8[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D8.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D8[0] + "', '" + D8[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D8[0] + "', '" + D8[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D9[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D9[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D9.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D9[0] + "', '" + D9[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D9[0] + "', '" + D9[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D10[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D10[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D10.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D10[0] + "', '" + D10[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTOmunicipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D10[0] + "', '" + D10[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D11[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D11[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D11.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D11[0] + "', '" + D11[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D11[0] + "', '" + D11[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D12[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D12[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D12.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D12[0] + "', '" + D12[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D12[0] + "', '" + D12[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D13[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D13[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D13.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D13[0] + "', '" + D13[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D13[0] + "', '" + D13[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D14[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D14[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D14.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D14[0] + "', '" + D14[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D14[0] + "', '" + D14[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D15[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D15[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D15.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D15[0] + "', '" + D15[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D15[0] + "', '" + D15[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D16[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D16[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D16.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D16[0] + "', '" + D16[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D16[0] + "', '" + D16[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D17[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D17[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D17.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D17[0] + "', '" + D17[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D17[0] + "', '" + D17[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D18[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D18[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D18.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D18[0] + "', '" + D18[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D18[0] + "', '" + D18[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D19[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D19[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D19.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D19[0] + "', '" + D19[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D19[0] + "', '" + D19[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D20[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D20[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D20.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D20[0] + "', '" + D20[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D20[0] + "', '" + D20[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D21[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D21[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D21.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D21[0] + "', '" + D21[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D21[0] + "', '" + D21[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
 
-               DRIVER1.EjecutarQuery("INSERT INTO `renap`.`departamento` (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D22[0] + "');");
+               DRIVER1.EjecutarQuery("INSERT INTO departamento (`ID_Departamento`, `Descripcion`) VALUES ('" + NUMDEPTO + "', '" + D22[0] + "');");
                NUMDEPTO = NUMDEPTO + 1;
                for (int N = 1; N < this.D22.length; N++) {
-                    DRIVER1.EjecutarQuery("INSERT INTO `renap`.`municipio` (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D22[0] + "', '" + D22[N] + "');");
+                    DRIVER1.EjecutarQuery("INSERT INTO municipio (`ID_Municipio`, `Departamento`, `Descripcion`) VALUES ('" + NUMMUNI + "', '" + D22[0] + "', '" + D22[N] + "');");
                     NUMMUNI = NUMMUNI + 1;
                }
           } catch (SQLException ex) {
